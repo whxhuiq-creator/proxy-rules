@@ -1,0 +1,3 @@
+# OpenAI 本地重复规则（远程已有，可删除）
+host-suffix,hcaptcha.com
+host-suffix,sentry-cdn.com

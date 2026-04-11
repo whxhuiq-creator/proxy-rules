@@ -1,0 +1,14 @@
+# Claude 本地重复规则（远程已有，可删除）
+host-suffix,hcaptcha.com
+host-suffix,sentry-cdn.com
+host-suffix,sentry.io
+host-suffix,intercom.io
+host-suffix,anthropic.com
+host-suffix,usefathom.com
+host-suffix,statsigapi.net
+host-suffix,featuregates.org
+host-suffix,arkoselabs.com
+host-suffix,anthropicusercontent.com
+host-suffix,claudeusercontent.com
+host-suffix,claude.com
+host-suffix,claude.ai

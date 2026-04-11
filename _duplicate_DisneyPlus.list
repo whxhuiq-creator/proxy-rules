@@ -1,0 +1,10 @@
+# DisneyPlus 本地重复规则（远程已有，可删除）
+DOMAIN-SUFFIX,disneyplus.com
+DOMAIN-SUFFIX,disney-plus.net
+DOMAIN-SUFFIX,disneystreaming.com
+DOMAIN-SUFFIX,dssott.com
+DOMAIN,vpe-static.bamgrid.com
+DOMAIN,disney.api.edge.bamgrid.com
+DOMAIN,disney.connections.edge.bamgrid.com
+DOMAIN,disney.content.edge.bamgrid.com
+DOMAIN,disney.playback.edge.bamgrid.com

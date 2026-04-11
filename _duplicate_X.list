@@ -1,0 +1,5 @@
+# X 本地重复规则（远程已有，可删除）
+host-suffix,x.ai
+host-suffix,grok.com
+host-suffix,ads-twitter.com
+host-suffix,twitter.com
