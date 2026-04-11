@@ -1,6 +1,6 @@
 # Crypto / 加密货币规则
-host,bybit.ada.support
-host,bybit-exchange.github.io
+DOMAIN,bybit.ada.support
+DOMAIN,bybit-exchange.github.io
 DOMAIN-SUFFIX,1inch.io
 DOMAIN-SUFFIX,1ml.com
 DOMAIN-SUFFIX,aave.com
