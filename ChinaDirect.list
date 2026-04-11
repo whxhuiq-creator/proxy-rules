@@ -1,8 +1,8 @@
 # China Direct Rules
 # 中国境内直连规则
 # 自动从 QX 配置文件提取
-host-suffix,api.clashofclans.com
-host-suffix,clashofclans.com
+DOMAIN-SUFFIX,api.clashofclans.com
+DOMAIN-SUFFIX,clashofclans.com
 DOMAIN-SUFFIX,durable0762.com
 DOMAIN-SUFFIX,delirium9599.com
 DOMAIN-SUFFIX,wrecking7857.com
