@@ -1,4 +1,4 @@
-# Claude 本地重复规则（远程已有，可删除）
+# Claude 规则集
 host-suffix,hcaptcha.com
 host-suffix,sentry-cdn.com
 host-suffix,sentry.io
