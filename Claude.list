@@ -1,14 +1,31 @@
 # Claude 规则集
-host-suffix,hcaptcha.com
-host-suffix,sentry-cdn.com
-host-suffix,sentry.io
-host-suffix,intercom.io
-host-suffix,anthropic.com
-host-suffix,usefathom.com
-host-suffix,statsigapi.net
-host-suffix,featuregates.org
-host-suffix,arkoselabs.com
-host-suffix,anthropicusercontent.com
-host-suffix,claudeusercontent.com
-host-suffix,claude.com
-host-suffix,claude.ai
+# 主域名
+DOMAIN-SUFFIX,anthropic.com,Proxy
+DOMAIN-SUFFIX,claude.ai,Proxy
+DOMAIN-SUFFIX,claude.com,Proxy
+DOMAIN-SUFFIX,anthropicusercontent.com,Proxy
+DOMAIN-SUFFIX,claudeusercontent.com,Proxy
+
+# 平台与 API Console
+DOMAIN-SUFFIX,platform.claude.com,Proxy
+
+# Claude Code 安装与更新
+DOMAIN-SUFFIX,downloads.claude.ai,Proxy
+DOMAIN-SUFFIX,bridge.claudeusercontent.com,Proxy
+
+# 验证码
+DOMAIN-SUFFIX,hcaptcha.com,Proxy
+DOMAIN-SUFFIX,arkoselabs.com,Proxy
+
+# 监控与错误追踪
+DOMAIN-SUFFIX,sentry.io,Proxy
+DOMAIN-SUFFIX,sentry-cdn.com,Proxy
+
+# 客服
+DOMAIN-SUFFIX,intercom.io,Proxy
+
+# Feature Flag / 分析
+DOMAIN-SUFFIX,statsigapi.net,Proxy
+DOMAIN-SUFFIX,featuregates.org,Proxy
+DOMAIN-SUFFIX,usefathom.com,Proxy
+# >>> Claude / Anthropic 规则结束 <
