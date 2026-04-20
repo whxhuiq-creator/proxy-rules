@@ -26,3 +26,17 @@ DOMAIN-SUFFIX,statsigapi.net,Claude
 DOMAIN-SUFFIX,featuregates.org,Claude
 DOMAIN-SUFFIX,launchdarkly.com,Claude
 DOMAIN-SUFFIX,usefathom.com,Claude
+
+# =========================================
+# 测试 纯净版
+# Claude / Anthropic 核心规则集 (极致纯净版)
+# 主域名与 API
+#DOMAIN-SUFFIX,anthropic.com,Claude
+#DOMAIN-SUFFIX,claude.ai,Claude
+#DOMAIN-SUFFIX,claude.com,Claude
+#DOMAIN-SUFFIX,clau.de,Claude
+
+# CDN、用户内容与 Artifacts 预览
+#DOMAIN-SUFFIX,anthropicusercontent.com,Claude
+#DOMAIN-SUFFIX,claudeusercontent.com,Claude
+#DOMAIN-SUFFIX,claude.site,Claude
