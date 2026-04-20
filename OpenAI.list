@@ -6,7 +6,6 @@ DOMAIN-KEYWORD,openai,OpenAI
 DOMAIN-SUFFIX,openai.com,OpenAI
 DOMAIN-SUFFIX,chatgpt.com,OpenAI
 DOMAIN-SUFFIX,ai.com,OpenAI
-DOMAIN-SUFFIX,sora.com,OpenAI
 DOMAIN-SUFFIX,crixet.com,OpenAI
 
 # CDN 及静态资源
