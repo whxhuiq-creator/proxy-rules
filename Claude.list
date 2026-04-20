@@ -1,32 +1,32 @@
 # Claude / Anthropic 规则集
 # 主域名
-DOMAIN-SUFFIX,anthropic.com,Proxy
-DOMAIN-SUFFIX,claude.ai,Proxy
-DOMAIN-SUFFIX,claude.com,Proxy
+DOMAIN-SUFFIX,anthropic.com,Claude
+DOMAIN-SUFFIX,claude.ai,Claude
+DOMAIN-SUFFIX,claude.com,Claude
 
 # CDN、用户内容及下载
-DOMAIN-SUFFIX,anthropicusercontent.com,Proxy
-DOMAIN-SUFFIX,claudeusercontent.com,Proxy
-DOMAIN-SUFFIX,bridge.claudeusercontent.com,Proxy
-DOMAIN-SUFFIX,downloads.claude.ai,Proxy
+DOMAIN-SUFFIX,anthropicusercontent.com,Claude
+DOMAIN-SUFFIX,claudeusercontent.com,Claude
+DOMAIN-SUFFIX,bridge.claudeusercontent.com,Claude
+DOMAIN-SUFFIX,downloads.claude.ai,Claude
 
 # 平台与 API Console
-DOMAIN-SUFFIX,platform.claude.com,Proxy
+DOMAIN-SUFFIX,platform.claude.com,Claude
 
 # 验证码与安全风控
-DOMAIN-SUFFIX,hcaptcha.com,Proxy
-DOMAIN-SUFFIX,arkoselabs.com,Proxy
+DOMAIN-SUFFIX,hcaptcha.com,Claude
+DOMAIN-SUFFIX,arkoselabs.com,Claude
 
 # 辅助系统（支付、监控、客服）
-DOMAIN-SUFFIX,stripe.com,Proxy
-DOMAIN-SUFFIX,sentry.io,Proxy
-DOMAIN-SUFFIX,sentry-cdn.com,Proxy
-DOMAIN-SUFFIX,datadoghq.com,Proxy
-DOMAIN-SUFFIX,intercom.io,Proxy
-DOMAIN-SUFFIX,intercomcdn.com,Proxy
+DOMAIN-SUFFIX,stripe.com,Claude
+DOMAIN-SUFFIX,sentry.io,Claude
+DOMAIN-SUFFIX,sentry-cdn.com,Claude
+DOMAIN-SUFFIX,datadoghq.com,Claude
+DOMAIN-SUFFIX,intercom.io,Claude
+DOMAIN-SUFFIX,intercomcdn.com,Claude
 
 # Feature Flag / 网站分析
-DOMAIN-SUFFIX,statsigapi.net,Proxy
-DOMAIN-SUFFIX,featuregates.org,Proxy
-DOMAIN-SUFFIX,launchdarkly.com,Proxy
-DOMAIN-SUFFIX,usefathom.com,Proxy
+DOMAIN-SUFFIX,statsigapi.net,Claude
+DOMAIN-SUFFIX,featuregates.org,Claude
+DOMAIN-SUFFIX,launchdarkly.com,Claude
+DOMAIN-SUFFIX,usefathom.com,Claude
