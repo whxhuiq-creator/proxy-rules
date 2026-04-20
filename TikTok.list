@@ -1,4 +1,4 @@
-# TikTok 本地重复规则（远程已有，可删除）
+# TikTok 规则集
 IP-CIDR,34.102.0.0/16,no-resolve
 IP-CIDR,130.211.0.0/16,no-resolve
 host-keyword,adjust
