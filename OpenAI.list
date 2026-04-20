@@ -1,4 +1,4 @@
-# OpenAI / ChatGPT 规则集
+# OpenAI / ChatGPT 规则集（冗余，可能会影响其他平台）
 # 1. 核心主域名 (高频访问，优先匹配)
 DOMAIN-SUFFIX,openai.com,OpenAI
 DOMAIN-SUFFIX,chatgpt.com,OpenAI
