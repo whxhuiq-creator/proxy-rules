@@ -17,8 +17,6 @@ DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,OpenAI
 
 # 3. 语音与 App 专属服务 (高级语音模式依赖)
 DOMAIN-SUFFIX,livekit.cloud,OpenAI
-DOMAIN-SUFFIX,host.livekit.cloud,OpenAI
-DOMAIN-SUFFIX,turn.livekit.cloud,OpenAI
 
 # 4. 关键字兜底 (防官方新增未知域名)
 DOMAIN-KEYWORD,openai,OpenAI
