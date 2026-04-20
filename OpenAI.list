@@ -1,34 +1,36 @@
 # OpenAI 规则集
-# 主域名
-DOMAIN-SUFFIX,openai.com,Proxy
-DOMAIN-SUFFIX,chatgpt.com,Proxy
-DOMAIN-SUFFIX,ai.com,Proxy
-DOMAIN-SUFFIX,sora.com,Proxy
-DOMAIN-SUFFIX,crixet.com,Proxy
-
-# CDN 及静态资源
-DOMAIN-SUFFIX,oaistatic.com,Proxy
-DOMAIN-SUFFIX,oaiusercontent.com,Proxy
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net,Proxy
-DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
-DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net,Proxy
-DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,Proxy
-DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net,Proxy
-DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,Proxy
-DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,Proxy
-
-# 语音功能 (Advanced Voice Mode)
-DOMAIN-SUFFIX,chatgpt.livekit.cloud,Proxy
-DOMAIN-SUFFIX,host.livekit.cloud,Proxy
-
-# 授权与验证
-DOMAIN-SUFFIX,auth0.com,Proxy
-DOMAIN-SUFFIX,arkoselabs.com,Proxy
-
-# 辅助系统（支付、监控、客服）
-DOMAIN-SUFFIX,api.revenuecat.com,Proxy
-DOMAIN-SUFFIX,browser-intake-datadoghq.com,Proxy
-DOMAIN-SUFFIX,ingest.sentry.io,Proxy
-DOMAIN-SUFFIX,o33249.ingest.sentry.io,Proxy
-DOMAIN-SUFFIX,client.crisp.chat,Proxy
-# >>> OpenAI / ChatGPT 规则结束 <
+HOST,browser-intake-datadoghq.com,OpenAI
+HOST,chat.openai.com.cdn.cloudflare.net,OpenAI
+HOST,openai-api.arkoselabs.com,OpenAI
+HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,OpenAI
+HOST,openaicomproductionae4b.blob.core.windows.net,OpenAI
+HOST,production-openaicom-storage.azureedge.net,OpenAI
+HOST,static.cloudflareinsights.com,OpenAI
+HOST-SUFFIX,ai.com,OpenAI
+HOST-SUFFIX,algolia.net,OpenAI
+HOST-SUFFIX,api.statsig.com,OpenAI
+HOST-SUFFIX,auth0.com,OpenAI
+HOST-SUFFIX,chatgpt.com,OpenAI
+HOST-SUFFIX,chatgpt.livekit.cloud,OpenAI
+HOST-SUFFIX,client-api.arkoselabs.com,OpenAI
+HOST-SUFFIX,events.statsigapi.net,OpenAI
+HOST-SUFFIX,featuregates.org,OpenAI
+HOST-SUFFIX,host.livekit.cloud,OpenAI
+HOST-SUFFIX,identrust.com,OpenAI
+HOST-SUFFIX,intercom.io,OpenAI
+HOST-SUFFIX,intercomcdn.com,OpenAI
+HOST-SUFFIX,launchdarkly.com,OpenAI
+HOST-SUFFIX,oaistatic.com,OpenAI
+HOST-SUFFIX,oaiusercontent.com,OpenAI
+HOST-SUFFIX,observeit.net,OpenAI
+HOST-SUFFIX,openai.com,OpenAI
+HOST-SUFFIX,openaiapi-site.azureedge.net,OpenAI
+HOST-SUFFIX,openaicom.imgix.net,OpenAI
+HOST-SUFFIX,segment.io,OpenAI
+HOST-SUFFIX,sentry.io,OpenAI
+HOST-SUFFIX,stripe.com,OpenAI
+HOST-SUFFIX,turn.livekit.cloud,OpenAI
+HOST-KEYWORD,openai,OpenAI
+IP-CIDR,24.199.123.28/32,OpenAI
+IP-CIDR,64.23.132.171/32,OpenAI
+IP-ASN,20473,OpenAI
