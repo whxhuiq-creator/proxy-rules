@@ -1,55 +1,55 @@
 # OpenAI / ChatGPT 规则集
 # 关键字匹配 (防官方新加不可知域名)
-DOMAIN-KEYWORD,openai,Proxy
+DOMAIN-KEYWORD,openai,OpenAI
 
 # 主域名与核心产品
-DOMAIN-SUFFIX,openai.com,Proxy
-DOMAIN-SUFFIX,chatgpt.com,Proxy
-DOMAIN-SUFFIX,ai.com,Proxy
-DOMAIN-SUFFIX,sora.com,Proxy
-DOMAIN-SUFFIX,crixet.com,Proxy
+DOMAIN-SUFFIX,openai.com,OpenAI
+DOMAIN-SUFFIX,chatgpt.com,OpenAI
+DOMAIN-SUFFIX,ai.com,OpenAI
+DOMAIN-SUFFIX,sora.com,OpenAI
+DOMAIN-SUFFIX,crixet.com,OpenAI
 
 # CDN 及静态资源
-DOMAIN-SUFFIX,oaistatic.com,Proxy
-DOMAIN-SUFFIX,oaiusercontent.com,Proxy
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net,Proxy
-DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
-DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net,Proxy
-DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,Proxy
-DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net,Proxy
-DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,Proxy
-DOMAIN-SUFFIX,chat.openai.com.cdn.cloudflare.net,Proxy
-DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,Proxy
-DOMAIN-SUFFIX,static.cloudflareinsights.com,Proxy
+DOMAIN-SUFFIX,oaistatic.com,OpenAI
+DOMAIN-SUFFIX,oaiusercontent.com,OpenAI
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net,OpenAI
+DOMAIN-SUFFIX,openaicom.imgix.net,OpenAI
+DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net,OpenAI
+DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,OpenAI
+DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net,OpenAI
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,OpenAI
+DOMAIN-SUFFIX,chat.openai.com.cdn.cloudflare.net,OpenAI
+DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,OpenAI
+DOMAIN-SUFFIX,static.cloudflareinsights.com,OpenAI
 
 # 语音功能
-DOMAIN-SUFFIX,livekit.cloud,Proxy
+DOMAIN-SUFFIX,livekit.cloud,OpenAI
 
 # 授权、验证与风控系统
-DOMAIN,challenges.cloudflare.com,Proxy
-DOMAIN-SUFFIX,auth0.com,Proxy
-DOMAIN-SUFFIX,arkoselabs.com,Proxy
-DOMAIN-SUFFIX,identrust.com,Proxy
+DOMAIN,challenges.cloudflare.com,OpenAI
+DOMAIN-SUFFIX,auth0.com,OpenAI
+DOMAIN-SUFFIX,arkoselabs.com,OpenAI
+DOMAIN-SUFFIX,identrust.com,OpenAI
 
 # 辅助系统（支付、监控、遥测、客服、搜索）
-DOMAIN-SUFFIX,stripe.com,Proxy
-DOMAIN-SUFFIX,api.revenuecat.com,Proxy
-DOMAIN-SUFFIX,browser-intake-datadoghq.com,Proxy
-DOMAIN-SUFFIX,ingest.sentry.io,Proxy
-DOMAIN-SUFFIX,sentry.io,Proxy
-DOMAIN-SUFFIX,client.crisp.chat,Proxy
-DOMAIN-SUFFIX,intercom.io,Proxy
-DOMAIN-SUFFIX,intercomcdn.com,Proxy
-DOMAIN-SUFFIX,algolia.net,Proxy
-DOMAIN-SUFFIX,segment.io,Proxy
+DOMAIN-SUFFIX,stripe.com,OpenAI
+DOMAIN-SUFFIX,api.revenuecat.com,OpenAI
+DOMAIN-SUFFIX,browser-intake-datadoghq.com,OpenAI
+DOMAIN-SUFFIX,ingest.sentry.io,OpenAI
+DOMAIN-SUFFIX,sentry.io,OpenAI
+DOMAIN-SUFFIX,client.crisp.chat,OpenAI
+DOMAIN-SUFFIX,intercom.io,OpenAI
+DOMAIN-SUFFIX,intercomcdn.com,OpenAI
+DOMAIN-SUFFIX,algolia.net,OpenAI
+DOMAIN-SUFFIX,segment.io,OpenAI
 
 # App 端隐式调用与 A/B 测试
-DOMAIN-SUFFIX,api.statsig.com,Proxy
-DOMAIN-SUFFIX,events.statsigapi.net,Proxy
-DOMAIN-SUFFIX,featureassets.org,Proxy
-DOMAIN-SUFFIX,prodregistryv2.org,Proxy
-DOMAIN-SUFFIX,observeit.net,Proxy
-DOMAIN-SUFFIX,launchdarkly.com,Proxy
+DOMAIN-SUFFIX,api.statsig.com,OpenAI
+DOMAIN-SUFFIX,events.statsigapi.net,OpenAI
+DOMAIN-SUFFIX,featureassets.org,OpenAI
+DOMAIN-SUFFIX,prodregistryv2.org,OpenAI
+DOMAIN-SUFFIX,observeit.net,OpenAI
+DOMAIN-SUFFIX,launchdarkly.com,OpenAI
 
 # App 端底层 IP 直连防漏网 (吸收自 bm7)
 IP-CIDR,24.199.123.28/32,Proxy,no-resolve
