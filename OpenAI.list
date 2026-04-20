@@ -1,25 +1,34 @@
-# OpenAI规则集
+# OpenAI 规则集
 # 主域名
-- DOMAIN-SUFFIX,openai.com,Proxy
-- DOMAIN-SUFFIX,chatgpt.com,Proxy
-- DOMAIN-SUFFIX,chat.openai.com,Proxy
-- DOMAIN-SUFFIX,ai.com,Proxy
+DOMAIN-SUFFIX,openai.com,Proxy
+DOMAIN-SUFFIX,chatgpt.com,Proxy
+DOMAIN-SUFFIX,ai.com,Proxy
+DOMAIN-SUFFIX,sora.com,Proxy
+DOMAIN-SUFFIX,crixet.com,Proxy
 
-# CDN 及静态资源 (关键)
-- DOMAIN-SUFFIX,oaistatic.com,Proxy
-- DOMAIN-SUFFIX,oaiusercontent.com,Proxy
-- DOMAIN-SUFFIX,cdn.openai.com,Proxy
-- DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,Proxy
-- DOMAIN-SUFFIX,openaiapi-site.azureedge.net,Proxy
-- DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
-- DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net,Proxy
-- DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,Proxy
+# CDN 及静态资源
+DOMAIN-SUFFIX,oaistatic.com,Proxy
+DOMAIN-SUFFIX,oaiusercontent.com,Proxy
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net,Proxy
+DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
+DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net,Proxy
+DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,Proxy
+DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net,Proxy
+DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,Proxy
+DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net,Proxy
 
-# 授权、验证与辅助系统
-- DOMAIN-SUFFIX,auth0.com,Proxy
-- DOMAIN-SUFFIX,api.revenuecat.com,Proxy
-- DOMAIN-SUFFIX,browser-intake-datadoghq.com,Proxy
-- DOMAIN-SUFFIX,ingest.sentry.io,Proxy
-- DOMAIN-SUFFIX,o33249.ingest.sentry.io,Proxy
-- DOMAIN-SUFFIX,client.crisp.chat,Proxy
-# >>> OpenAI / ChatGPT 规则结束 <<<
+# 语音功能 (Advanced Voice Mode)
+DOMAIN-SUFFIX,chatgpt.livekit.cloud,Proxy
+DOMAIN-SUFFIX,host.livekit.cloud,Proxy
+
+# 授权与验证
+DOMAIN-SUFFIX,auth0.com,Proxy
+DOMAIN-SUFFIX,arkoselabs.com,Proxy
+
+# 辅助系统（支付、监控、客服）
+DOMAIN-SUFFIX,api.revenuecat.com,Proxy
+DOMAIN-SUFFIX,browser-intake-datadoghq.com,Proxy
+DOMAIN-SUFFIX,ingest.sentry.io,Proxy
+DOMAIN-SUFFIX,o33249.ingest.sentry.io,Proxy
+DOMAIN-SUFFIX,client.crisp.chat,Proxy
+# >>> OpenAI / ChatGPT 规则结束 <
