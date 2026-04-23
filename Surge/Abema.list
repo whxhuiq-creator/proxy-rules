@@ -1,9 +1,9 @@
 # Abema 本地重复规则（远程已有，可删除）
-host-keyword,abematv
-host-keyword,abema
-host-suffix,hayabusa.io
-host-suffix,hayabusa.media
-host-suffix,abema-tv.com
-host-suffix,abema.jp
-host-suffix,abema.io
-host-suffix,abema.tv
+DOMAIN-KEYWORD,abematv
+DOMAIN-KEYWORD,abema
+DOMAIN-SUFFIX,hayabusa.io
+DOMAIN-SUFFIX,hayabusa.media
+DOMAIN-SUFFIX,abema-tv.com
+DOMAIN-SUFFIX,abema.jp
+DOMAIN-SUFFIX,abema.io
+DOMAIN-SUFFIX,abema.tv
