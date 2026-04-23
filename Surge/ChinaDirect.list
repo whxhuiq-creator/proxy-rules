@@ -4554,6 +4554,3 @@ IP6-CIDR,240e:f7:4f00:1f10::/60,no-resolve
 IP6-CIDR,240e:f7:a070:100::/60,no-resolve
 IP6-CIDR,240e:ff:9018:100::/60,no-resolve
 IP6-CIDR,240e:ff:f100::/44,no-resolve
-USER-AGENT,MicroMessenger*
-USER-AGENT,WeChat*
-GEOIP,CN
