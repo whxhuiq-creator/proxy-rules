@@ -1,4 +1,4 @@
-# Google 规则集
+# Google 未修改
 HOST,clientservices.googleapis.com,Google
 HOST,crl.pki.goog,Google
 HOST,fonts.googleapis.com,Google
