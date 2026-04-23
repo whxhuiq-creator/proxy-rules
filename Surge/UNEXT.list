@@ -1,0 +1,6 @@
+# U-NEXT 日本流媒体规则
+host-suffix,nx-cdn.com
+host-suffix,hnext.jp
+host-keyword,unext
+host-suffix,nxtv.jp
+host-suffix,unext.jp
