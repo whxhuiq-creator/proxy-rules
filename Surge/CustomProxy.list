@@ -1,7 +1,7 @@
 # Custom Proxy Rules
 # 通用代理规则（从 filter_local 提取）
 DOMAIN-SUFFIX,signal.org
-DOMAIN-SUFFIX,clashofclans
+DOMAIN-KEYWORD,clashofclans
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ping0.cc
 DOMAIN-SUFFIX,1password.com
