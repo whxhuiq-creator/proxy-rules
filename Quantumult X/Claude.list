@@ -1,31 +1,31 @@
 # Claude / Anthropic 规则集（冗余，可能影响其他平台）
 # 2026/4/20
 # 主域名
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,anthropic.com,Claude
+DOMAIN-SUFFIX,claude.ai,Claude
+DOMAIN-SUFFIX,claude.com,Claude
 
 # CDN、用户内容及下载
-DOMAIN-SUFFIX,anthropicusercontent.com
-DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,anthropicusercontent.com,Claude
+DOMAIN-SUFFIX,claudeusercontent.com,Claude
 
 # 验证码与安全风控 (注意：会影响其他网站)
-DOMAIN-SUFFIX,hcaptcha.com
-DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,hcaptcha.com,Claude
+DOMAIN-SUFFIX,arkoselabs.com,Claude
 
 # 辅助系统（支付、监控、客服）(注意：会影响其他网站)
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,sentry-cdn.com
-DOMAIN-SUFFIX,datadoghq.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,stripe.com,Claude
+DOMAIN-SUFFIX,sentry.io,Claude
+DOMAIN-SUFFIX,sentry-cdn.com,Claude
+DOMAIN-SUFFIX,datadoghq.com,Claude
+DOMAIN-SUFFIX,intercom.io,Claude
+DOMAIN-SUFFIX,intercomcdn.com,Claude
 
 # Feature Flag / 网站分析
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,usefathom.com
+DOMAIN-SUFFIX,statsigapi.net,Claude
+DOMAIN-SUFFIX,featuregates.org,Claude
+DOMAIN-SUFFIX,launchdarkly.com,Claude
+DOMAIN-SUFFIX,usefathom.com,Claude
 
 # =========================================
 # 测试 纯净版
