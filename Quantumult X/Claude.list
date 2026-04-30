@@ -28,7 +28,7 @@ DOMAIN-SUFFIX,launchdarkly.com,Claude
 DOMAIN-SUFFIX,usefathom.com,Claude
 
 # --- 以下为新增补全规则 ---
-# 补充：API 基础设施与监控
+# 补充：API 基础设施与监控（可能影响其他平台）
 DOMAIN-SUFFIX,anthropic.statuspage.io,Claude
 DOMAIN,api.anthropic.com,Claude
 DOMAIN,sentry.anthropic.com,Claude
