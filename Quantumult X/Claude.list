@@ -27,6 +27,24 @@ DOMAIN-SUFFIX,featuregates.org,Claude
 DOMAIN-SUFFIX,launchdarkly.com,Claude
 DOMAIN-SUFFIX,usefathom.com,Claude
 
+# --- 以下为新增补全规则 ---
+# 补充：API 基础设施与监控
+DOMAIN-SUFFIX,anthropic.statuspage.io,Claude
+DOMAIN,api.anthropic.com,Claude
+DOMAIN,sentry.anthropic.com,Claude
+
+# 补充：数据分析与用户行为监测 (Claude 网页版内嵌)
+DOMAIN-SUFFIX,amplitude.com,Claude
+DOMAIN-SUFFIX,segment.com,Claude
+DOMAIN-SUFFIX,segment.io,Claude
+DOMAIN-SUFFIX,fullstory.com,Claude
+DOMAIN-SUFFIX,clarity.ms,Claude
+
+# 补充：前端资源与字体 (部分组件依赖)
+DOMAIN-SUFFIX,fonts.googleapis.com,Claude
+DOMAIN-SUFFIX,fonts.gstatic.com,Claude
+DOMAIN-SUFFIX,js.stripe.com,Claude
+
 # =========================================
 # 测试 纯净版
 # Claude / Anthropic 核心规则集 (极致纯净版)
