@@ -1,0 +1,196 @@
+/*
+节点入口/落地查询 for Quantumult X
+作者：定制版
+用途：手动点击任务时，对比显示当前选中节点的入口（server 字段）与落地 IP 的信息
+触发方式：[task_local] event-interaction
+
+配置示例（加到 [task_local] 段）:
+event-interaction https://你的raw地址/node_path_check.js, tag=节点链路分析, img-url=globe.americas.fill.system, enabled=true
+
+API 说明：
+- 入口信息查询：ip-api.com（免费，无需 key，限频 45 次/分钟）
+- 落地信息查询：通过当前代理访问 ip-api.com，自然得到出口 IP
+- DNS 解析：调用 cloudflare-dns.com 的 DoH 接口
+*/
+
+const $ = {
+  notify: (title, subtitle, body) => $notify(title, subtitle, body),
+  done: () => $done(),
+};
+
+// ========== 工具函数 ==========
+
+// 判断字符串是否为 IP 地址（v4/v6 简易判断）
+function isIP(str) {
+  if (!str) return false;
+  // IPv4
+  if (/^(\d{1,3}\.){3}\d{1,3}$/.test(str)) return true;
+  // IPv6（简易）
+  if (/^[0-9a-fA-F:]+$/.test(str) && str.includes(":")) return true;
+  return false;
+}
+
+// DNS 解析（DoH，走直连/代理由 QX 决定）
+function resolveDomain(domain) {
+  return new Promise((resolve) => {
+    if (isIP(domain)) {
+      resolve(domain);
+      return;
+    }
+    const url = `https://1.1.1.1/dns-query?name=${encodeURIComponent(domain)}&type=A`;
+    $task.fetch({
+      url: url,
+      method: "GET",
+      headers: { Accept: "application/dns-json" },
+      timeout: 5000,
+    }).then(
+      (resp) => {
+        try {
+          const data = JSON.parse(resp.body);
+          if (data.Answer && data.Answer.length > 0) {
+            const aRecord = data.Answer.find((r) => r.type === 1);
+            resolve(aRecord ? aRecord.data : domain);
+          } else {
+            resolve(domain);
+          }
+        } catch (e) {
+          resolve(domain);
+        }
+      },
+      () => resolve(domain)
+    );
+  });
+}
+
+// 查询 IP 信息（直连，用于入口查询）
+function queryIPDirect(ip) {
+  return new Promise((resolve) => {
+    const url = `http://ip-api.com/json/${ip}?lang=zh-CN&fields=status,country,regionName,city,isp,org,as,query`;
+    $task.fetch({
+      url: url,
+      method: "GET",
+      timeout: 5000,
+    }).then(
+      (resp) => {
+        try {
+          resolve(JSON.parse(resp.body));
+        } catch (e) {
+          resolve(null);
+        }
+      },
+      () => resolve(null)
+    );
+  });
+}
+
+// 查询当前出口 IP 信息（走代理，用于落地查询）
+function queryIPViaProxy() {
+  return new Promise((resolve) => {
+    const url = `http://ip-api.com/json/?lang=zh-CN&fields=status,country,regionName,city,isp,org,as,query`;
+    $task.fetch({
+      url: url,
+      method: "GET",
+      timeout: 8000,
+    }).then(
+      (resp) => {
+        try {
+          resolve(JSON.parse(resp.body));
+        } catch (e) {
+          resolve(null);
+        }
+      },
+      () => resolve(null)
+    );
+  });
+}
+
+// 提取 ASN 编号（"AS13335 Cloudflare, Inc." -> "AS13335"）
+function shortASN(asField) {
+  if (!asField) return "未知";
+  const m = asField.match(/^AS\d+/);
+  return m ? `${m[0]} ${asField.slice(m[0].length).trim()}` : asField;
+}
+
+// 格式化单条 IP 信息为多行字符串
+function formatInfo(label, ipInfo, originalServer) {
+  if (!ipInfo || ipInfo.status !== "success") {
+    return `${label}\n  地址：${originalServer || "查询失败"}\n  信息：查询失败`;
+  }
+  const lines = [
+    label,
+    `  IP：${ipInfo.query}${
+      originalServer && originalServer !== ipInfo.query
+        ? ` (${originalServer})`
+        : ""
+    }`,
+    `  位置：${ipInfo.country || "?"} / ${ipInfo.regionName || "?"} / ${
+      ipInfo.city || "?"
+    }`,
+    `  运营商：${ipInfo.isp || "未知"}`,
+    `  ASN：${shortASN(ipInfo.as)}`,
+  ];
+  return lines.join("\n");
+}
+
+// 判断是否经过中转
+function judgeRelay(entryInfo, exitInfo) {
+  if (!entryInfo || !exitInfo) return "❓ 无法判断（数据不全）";
+  if (entryInfo.status !== "success" || exitInfo.status !== "success")
+    return "❓ 无法判断（查询失败）";
+
+  const entryAS = (entryInfo.as || "").match(/^AS\d+/);
+  const exitAS = (exitInfo.as || "").match(/^AS\d+/);
+  const sameIP = entryInfo.query === exitInfo.query;
+  const sameAS = entryAS && exitAS && entryAS[0] === exitAS[0];
+  const sameCountry = entryInfo.country === exitInfo.country;
+
+  if (sameIP) return "✅ 直连落地（入口=出口）";
+  if (sameAS) return "🟡 同 ASN 内中转（可能是机场内部跳转）";
+  if (sameCountry) return "🟠 同国家不同 ASN 中转";
+  return "🔴 跨国/跨运营商中转";
+}
+
+// ========== 主流程 ==========
+
+async function main() {
+  // QX 提供 $server 内置变量，存放当前节点的 server 字段
+  // 触发任务时，用的是当前主策略选中的节点
+  const serverField = typeof $server !== "undefined" ? $server : null;
+
+  if (!serverField) {
+    $.notify(
+      "节点链路分析",
+      "⚠️ 未获取到节点信息",
+      "请确认当前已选中具体节点（不是策略组）"
+    );
+    $.done();
+    return;
+  }
+
+  // 提取域名/IP（去掉端口）
+  const serverHost = serverField.split(":")[0].replace(/^\[|\]$/g, "");
+
+  // 1. 解析入口域名 -> IP
+  const entryIP = await resolveDomain(serverHost);
+
+  // 2. 并发查询入口和落地
+  const [entryInfo, exitInfo] = await Promise.all([
+    queryIPDirect(entryIP),
+    queryIPViaProxy(),
+  ]);
+
+  // 3. 组装通知内容
+  const entryBlock = formatInfo("📥 入口（Server）", entryInfo, serverHost);
+  const exitBlock = formatInfo("📤 落地（出口）", exitInfo, null);
+  const verdict = judgeRelay(entryInfo, exitInfo);
+
+  const body = `${entryBlock}\n\n${exitBlock}\n\n━━━━━━━━━━\n${verdict}`;
+
+  $.notify("节点链路分析", `当前节点：${serverHost}`, body);
+  $.done();
+}
+
+main().catch((err) => {
+  $.notify("节点链路分析", "❌ 脚本异常", String(err));
+  $.done();
+});
